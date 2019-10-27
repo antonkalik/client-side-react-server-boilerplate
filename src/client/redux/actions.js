@@ -1,10 +1,8 @@
 import { UPDATE_STORE } from './constants';
 
-export const updateStore = (payload = {}) => {
+export const actionUpdateStore = (payload = {}) => {
   return {
     type: UPDATE_STORE,
-    data: {
-      payload,
-    },
+    payload,
   };
 };

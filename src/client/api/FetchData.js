@@ -3,8 +3,8 @@ import axios from 'axios';
 export default class FetchData {
   static getLatestData = async () => {
     try {
-      const response = await axios.get('/api/test');
-      console.log({ response });
+      const { data } = await axios.get('/api/test');
+      return data;
     } catch (e) {
       console.error({ e });
     }
