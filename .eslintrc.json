@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16.5.2"
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "plugins": ["prettier", "react", "react-hooks"],
+  "rules": {
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "no-useless-escape": 0,
+    "prettier/prettier": "error",
+    "react/jsx-key": 0,
+    "react/prefer-es6-class": 1,
+    "react/prop-types": 0,
+    "react/no-deprecated": 0, // have to turn it on in future
+    "react/no-string-refs": 0, // should check in future
+    "react/display-name": 0,
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  }
+}
