@@ -1,23 +1,15 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
-import { Header, Content, Footer } from '../components';
+import { FetchData } from '../api';
+import { Header, Content } from '../components';
 
 export default function Home() {
   useEffect(() => {
-    axios
-      .get('/api/test')
-      .then(response => {
-        console.log({ response });
-      })
-      .catch(error => {
-        console.log({ error });
-      });
+    FetchData.getLatestData();
   }, []);
   return (
-    <div className="app">
+    <div className="home">
       <Header />
       <Content />
-      <Footer />
     </div>
   );
 }

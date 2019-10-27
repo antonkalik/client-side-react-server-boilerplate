@@ -1,5 +1,5 @@
 ## Client Side React Server Boilerplate
-This is a client side server react boilerplate implementation that includes jest, enzyme, hot module reload, lint, prettier and etc. Feel free to fork it.<br>
+Client side server react boilerplate implementation that includes jest, enzyme, lint, prettier, hot module reload, redux, router and etc. Feel free to fork it.<br>
 
 Server: `localhost:9999`<br>
 Client: `localhost:3000`

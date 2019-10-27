@@ -1,11 +1,13 @@
 // commons
 @import 'reset';
 @import 'variables';
+@import 'commons';
 
 // views
-@import 'views/App';
+@import 'views/Home';
 
 // components
 @import 'components/Header';
 @import 'components/Content';
 @import 'components/Footer';
+@import 'components/Navigation';
