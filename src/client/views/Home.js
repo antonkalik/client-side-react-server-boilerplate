@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { Header, Content, Footer } from '../components';
 
 export default function Home() {
   useEffect(() => {
@@ -12,5 +13,11 @@ export default function Home() {
         console.log({ error });
       });
   }, []);
-  return <div>client-side react server boilerplate app </div>
+  return (
+    <div className="app">
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  );
 }
