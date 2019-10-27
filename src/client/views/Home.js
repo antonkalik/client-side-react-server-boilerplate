@@ -5,7 +5,7 @@ import { actionUpdateStore } from '../redux/actions';
 import { FetchData } from '../api';
 import { Header, Content } from '../components';
 
-function Home({ updateStore }) {
+export function Home({ updateStore }) {
   useEffect(() => {
     FetchData.getLatestData().then(res => {
       updateStore(res);
