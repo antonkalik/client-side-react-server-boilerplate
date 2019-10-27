@@ -11,5 +11,5 @@ app.get('/api/test', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`My REST API running on port: ${PORT}`);
+  console.log(`rest api running on port: ${PORT}`);
 });
