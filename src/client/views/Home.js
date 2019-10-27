@@ -12,5 +12,5 @@ export default function Home() {
         console.log({ error });
       });
   }, []);
-  return <div>translations app</div>;
+  return <div>client-side react server boilerplate app </div>
 }
