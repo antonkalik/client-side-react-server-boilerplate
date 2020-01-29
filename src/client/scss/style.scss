@@ -4,10 +4,7 @@
 @import 'commons';
 
 // views
-@import 'views/Home';
+@import '_views';
 
 // components
-@import 'components/Header';
-@import 'components/Content';
-@import 'components/Footer';
-@import 'components/Navigation';
+@import '_components';
