@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const colors = require('colors');
 
-// paths where indexes live
 const defaultPaths = {
   view: {
     jsPath: path.resolve('src/client/views'),
@@ -64,7 +63,7 @@ function generateSassIndexes(types) {
       });
       arrOfLines.push('');
       stringToWrite = arrOfLines.join('\n');
-      const fullPath = path.resolve('src/scss/') + '/' + defaultPaths[type].sassIndexName;
+      const fullPath = path.resolve('src/client/scss/') + '/' + defaultPaths[type].sassIndexName;
 
       fs.writeFile(fullPath, stringToWrite, () => {
         console.log(colors.green('Generated sass imports in ' + fullPath)); // eslint-disable-line no-console
