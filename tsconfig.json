@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "module": "commonjs",
+    "rootDir": "src",
+    "noImplicitAny": true,
+    "target": "es5",
+    "strict": true,
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src", "custom.d.ts"]
+}

@@ -5,25 +5,25 @@ const colors = require('colors');
 const defaultPaths = {
   view: {
     jsPath: path.resolve('src/client/views'),
-    jsIndexName: 'index.js',
+    jsIndexName: 'index.tsx',
     sassPath: path.resolve('src/client/scss/views'),
     sassIndexName: '_views.scss',
   },
   component: {
     jsPath: path.resolve('src/client/components'),
-    jsIndexName: 'index.js',
+    jsIndexName: 'index.tsx',
     sassPath: path.resolve('src/client/scss/components'),
     sassIndexName: '_components.scss',
   },
 };
 
 // global
-const exclusions = ['.DS_Store', 'index.js'];
+const exclusions = ['.DS_Store', 'index.tsx'];
 
 function generateJsIndexes(types) {
   // pass array of types, like ['view', 'component'] etc
   types.forEach(type => {
-    let arrOfLines = []; // push each line of index.js output file here
+    let arrOfLines = []; // push each line of index.tsx output file here
     let stringToWrite = '';
 
     fs.readdir(defaultPaths[type].jsPath, (err, files) => {

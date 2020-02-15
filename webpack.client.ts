@@ -3,9 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: ['./src/client/index.js', './src/client/scss/style.scss'],
+  entry: ['./src/client/index.tsx', './src/client/scss/style.scss'],
   mode: process.env.NODE_ENV,
   devtool: 'eval-source-map',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
   output: {
     filename: 'client_bundle.js',
     path: __dirname + '/dist/public',
@@ -26,10 +29,15 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
         },
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [{ loader: 'ts-loader' }, { loader: 'eslint-loader' }],
       },
       {
         test: /\.scss$/,
