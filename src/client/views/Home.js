@@ -1,32 +1,41 @@
-import React, { useEffect } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { actionUpdateStore } from '../redux/actions';
-import { FetchData } from '../api';
+import React, { useEffect, useState } from 'react';
 import { Header, Content } from '../components';
 
-export function Home({ updateStore }) {
+let intervalId;
+
+export default function Home() {
+  const [isOpen, setOpen] = useState(false);
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
-    FetchData.getLatestData().then(res => {
-      updateStore(res);
-    });
-  }, [updateStore]);
+    if (isOpen) {
+      intervalId = setInterval(() => {
+        setCount(count + 1);
+      }, 1000);
+    }
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [isOpen, intervalId]);
+
+  console.log(count);
 
   return (
     <div className="home">
       <Header />
       <Content />
+
+      <button onClick={() => setOpen(!isOpen)}>Click me</button>
+      <span> </span>
+      <label>{isOpen ? 'On' : 'Off'}</label>
+      <div>
+        <h1>Timer from useEffect:</h1>
+        {Array(count)
+          .fill('*')
+          .map((it, i) => (
+            <p key={i}>{i}</p>
+          ))}
+      </div>
     </div>
   );
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    updateStore: bindActionCreators(actionUpdateStore, dispatch),
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Home);
